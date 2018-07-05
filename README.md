@@ -4,6 +4,6 @@ remove duplicate photos
 
 Using MD5 and hashset to find out duplicate photos.
 
-Java program practise.
+Java programming practice.
 
 Whatsapp photo war makes my mobile has too many duplicate photos.
