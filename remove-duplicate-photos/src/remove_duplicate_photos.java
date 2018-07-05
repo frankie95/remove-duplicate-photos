@@ -17,9 +17,7 @@ public class remove_duplicate_photos{
 		    ArrayList<byte[]> imageCollection = new ArrayList<byte[]>();
 		    File [] files = path.listFiles();
 		    for (int i = 0; i < files.length; i++){
-		    	   if (files[i].isFile()){ //this line weeds out other directories/folders
-		    	      //imageCollection.add(Files.readAllBytes(files[i].toPath()));
-		    		  // System.out.println(files[i]);
+		    	   if (files[i].isFile()){ 
 		    	        MessageDigest md = MessageDigest.getInstance("MD5");
 				        byte[] mdbytes = md.digest(Files.readAllBytes(files[i].toPath()));	
 				        imageCollection.add(mdbytes);
@@ -36,39 +34,12 @@ public class remove_duplicate_photos{
 				        	  System.out.println(files[i].toString());
 				        	  count++;
 				         }
-				        //imageCollection.trimToSize();	
+				        
 		    	   }
 		    }
 		    
 		    System.out.println("Completed "+count);
-		/*    Iterator<byte[]> iterator = imageCollection.iterator();
-			while (iterator.hasNext()) {
-				 MessageDigest md = MessageDigest.getInstance("MD5");
-			        byte[] mdbytes = md.digest(iterator.next());		     
-			        StringBuffer sb = new StringBuffer();  
-			        for (int i = 0; i < mdbytes.length; i++) {
-			          sb.append(Integer.toString((mdbytes[i] & 0xff) + 0x100, 16).substring(1));
-			        }
-			        System.out.println("Digest(in hex format):: " + sb.toString());
-			}
-		    	
-		    	
-		      //f = new File("D:\\20180621_101210.jpg"); //image file path
-		      Path path1 = Paths.get("D:\\20180621_101210.jpg");
-		      
-		      System.out.println(path1);
-		      byte[] fileContents =  Files.readAllBytes(path1);
-		      System.out.println(fileContents.length);
 
-		      MessageDigest md = MessageDigest.getInstance("MD5");
-		        byte[] mdbytes = md.digest(fileContents);		     
-		        //convert the byte to hex format method 1
-		        StringBuffer sb = new StringBuffer();  
-		        for (int i = 0; i < mdbytes.length; i++) {
-		          sb.append(Integer.toString((mdbytes[i] & 0xff) + 0x100, 16).substring(1));
-		        }
-
-		        System.out.println("Digest(in hex format):: " + sb.toString());*/
 
 		    }catch(Exception e){
 		      System.out.println("Error: "+e);
